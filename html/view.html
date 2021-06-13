@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/main.css">
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine-dark.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <section>
+        <div class="head-nav">
+            <h2>Budgét</h2>
+            <nav>
+                <ul>
+                    <li><a class="li-head" href="#">Add Expense</a></li>
+                    <li><a class="li-head" href="#">View Expense</a></li>
+                    <li><a class="li-head" href="#">View Profile</a></li>
+                </ul>
+            </nav>
+            <a class="log-out" href="#"><button class="btnLogout">Logout</button></a>
+        </div>
+        <div class="table">
+            <div class="container">
+                <div class="add-title">
+                    <h1 class="add-text">VIEW EXPENSE</h1>
+                </div>
+                <div class="list-view">
+                    <div id="myGrid" class="ag-theme-alpine-dark" style="height: 200px; width:602px;"></div>
+                </div>
+
+
+                <script type="text/javascript" charset="utf-8">
+                    // specify the columns
+                    const columnDefs = [{
+                        field: "ID"
+                    }, {
+                        field: "Subcategory"
+                    }, {
+                        field: "Spending"
+                    }];
+
+                    // specify the data
+                    const rowData = [{
+                        ID: "01",
+                        Subcategory: "Transport",
+                        Spending: 35000
+                    }, {
+                        ID: "02",
+                        Subcategory: "Transport",
+                        Spending: 32000
+                    }, {
+                        ID: "03",
+                        Subcategory: "Transport",
+                        Spending: 72000
+                    }];
+
+                    // let the grid know which columns and what data to use
+                    const gridOptions = {
+                        columnDefs: columnDefs,
+                        rowData: rowData
+                    };
+
+                    // lookup the container we want the Grid to use
+                    const eGridDiv = document.querySelector('#myGrid');
+
+                    // create the grid passing in the div to use together with the columns & data we want to use
+                    new agGrid.Grid(eGridDiv, gridOptions);
+                </script>
+            </div>
+        </div>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    </section>
+
+</body>
+
+</html>

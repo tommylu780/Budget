@@ -1,0 +1,25 @@
+<h2 id="budget-logo">Budgét</h2>
+<section id="card-container">
+    <div class="form-container">
+        <form class="add-form">
+            <h1 class="form-title">ADD AN EXPENSE</h1>
+            <label for="expense-name">Name of Expense:</label>
+            <input type="text" name="name" id="expense_name" placeholder="Expense" required>
+            <label for="amount" id="amount-label">Amount:</label>
+            <input type="text" name="amount" id="amount" placeholder="$" required>
+            <label for="subcategory">Select a category:</label>
+            <select id="subcategory">
+                {{#each subcategories as |subcategory|}}
+                <option value="{{subcategory.id}}">{{subcategory.subcategory_name}}</option>
+                {{/each}}
+            </select>
+            <input type="submit" value="submit" name="subitExpense" id="submitExpenseBtn">
+        </form>
+        <div id="errors"></div>
+    </div>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+</section>
+<script src="/add.js"></script>

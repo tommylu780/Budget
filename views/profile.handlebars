@@ -1,0 +1,82 @@
+<h2 id="budget-logo">Budgét</h2>
+<section id="card-container">
+    <div class="table">
+        <div class="profile-container">
+            {{!-- <form class="add-form"> --}}
+                <h1 class="form-title">VIEW PROFILE</h1>
+                <ul id="profile-ul">
+                    <li>
+                        <strong>Username: </strong>{{user.username}}
+                    </li>
+                    <li>
+                        <strong>Email: </strong>{{user.email}}
+                    </li>
+                </ul>
+        </div>
+
+        <div id="grid-container-profile">
+            <div class="grid-item">
+                <h4>Total Spent:</h4>
+                <h2>${{totalSpent}}</h2>
+            </div>
+        </div>
+        <form id="viewCategory">
+            <label for="category">View total for:</label>
+            <select id="category">
+                {{#each parentcategories as |category|}}
+                <option value="{{category.id}}">
+                    {{category.category_name}}</option>
+                {{/each}}
+            </select>
+            <div id="renderCategoryTotal"></div>
+            <input type="submit" value="submit" name="submitCategory" id="submitCategoryBtn">
+        </form>
+
+    </div>
+
+
+    </div>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+</section>
+<script src="/category.js"></script>
+{{!--
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Spending');
+        data.addColumn('number', 10000);
+        data.addRows([
+            ['Transport', 500],
+            ['Food', 1000],
+            ['Entertainment', 500],
+            ['Personal', 5000],
+            ['Other', 2000]
+        ]);
+
+        // Set chart options
+        var options = {
+            'title': 'How Much $ I Spent Last Month',
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script> --}}

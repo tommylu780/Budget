@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Budgét</title>
+</head>
+
+<body>
+    <section class="main-header">
+        <div class="user-nav">
+            <ul>
+                {{#if loggedIn}}
+                <li><a class="log-out" href="#"><button class="btnLogout" id="logout-btn">Logout</button></a></li>
+                {{else}}
+                <li><a href="/"><button>Log In</button></a></li>
+                <li><a href="signup"><button>Sign Up</button></a></li>
+                {{/if}}
+            </ul>
+        </div>
+        <nav id="with-auth-nav">
+            <ul>
+                {{#if loggedIn}}
+                <li><a class="li-head" href="/add">Add Expense</a></li>
+                <li><a class="li-head" href="/expense">View Expenses</a></li>
+                <li><a class="li-head" href="/profile">View Profile</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+        </sectionr>
+        {{{body}}}
+        <script src="/logout.js"></script>
+</body>
+
+</html>

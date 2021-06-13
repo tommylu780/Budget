@@ -1,0 +1,514 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        display: flex;
+        float: left;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100px;
+        align-items: center;
+    }
+    
+    #budget-logo {
+        position: fixed;
+        top: 40px;
+        left: 40px;
+    }
+    
+    #card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .profile-container,
+    .expense-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    .profile-container h1 {
+        text-align: center;
+    }
+    
+    #profile-ul {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    
+    #profile-ul li {
+        color: white;
+        padding: 2px;
+        list-style: none;
+        text-align: center;
+    }
+    
+    #logout-btn {
+        width: 100px;
+        justify-content: space-around;
+        padding: 10px;
+        margin-right: 1rem;
+        width: 150px;
+        height: 30px;
+        border: none;
+        color: #fff;
+        background-color: black;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        text-decoration: none;
+    }
+    
+    #logout-btn:hover {
+        background-color: rgba(236, 247, 141, 0.8);
+    }
+    
+    .user-nav {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+    
+    .user-nav li {
+        display: inline-block;
+        list-style: none;
+    }
+    
+    #with-auth-nav {
+        width: 100vw;
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    #with-auth-nav li {
+        display: inline-block;
+        list-style: none;
+    }
+    
+    .li-head {
+        font-size: 16px;
+        font-weight: 900;
+        color: black;
+        text-decoration: none;
+        align-items: center;
+        list-style: none;
+        display: inline-block;
+        padding: 20px 20px 0 0;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .li-head:hover {
+        color: rgb(238, 88, 88);
+    }
+    
+    button {
+        justify-content: space-around;
+        margin-right: 1rem;
+        width: 150px;
+        height: 30px;
+        border: none;
+        color: #fff;
+        background-color: black;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+    
+    button:hover {
+        background-color: rgba(236, 247, 141, 0.8);
+    }
+    
+    h1 {
+        width: 100%;
+        color: rgb(44, 42, 42);
+    }
+    
+    .budget {
+        font-size: 330%;
+        top: 20%;
+        left: 14%;
+        position: absolute;
+    }
+    
+    .budget-text {
+        font-size: 50%;
+        top: 100%;
+        left: 15%;
+        position: absolute;
+    }
+    
+    .title {
+        font-size: 330%;
+        top: 5%;
+        left: 12%;
+        position: absolute;
+        z-index: 0;
+    }
+    /* Add Expense */
+    
+    .table {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 700px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        background: rgb(44, 42, 42);
+        top: 25%;
+        box-sizing: border-box;
+        position: absolute;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .table label {
+        color: #fff;
+        text-align: center;
+    }
+    
+    .add-text {
+        color: #fff;
+    }
+    /* CONSISTENT FORM STYLING */
+    
+    .form-container {
+        display: flex;
+        position: absolute;
+        top: 25%;
+        left: 40%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+        width: 300px;
+        background: rgb(44, 42, 42);
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-title {
+        font-size: 18px;
+        color: #fff;
+        padding: 10px 0px;
+    }
+    
+    form label {
+        font-size: 16px;
+        color: #fff;
+        padding: 20px 0px 5px;
+    }
+    
+    form input,
+    form select {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 30px;
+        color: #fff;
+        background-color: rgb(71, 71, 71);
+        font-size: 15px;
+        padding: 0px 5px;
+    }
+    
+    #signup-submitBtn,
+    #login-submitBtn,
+    #submitExpenseBtn,
+    #submitCategoryBtn {
+        border: none;
+        outline: none;
+        height: 25px;
+        background: #78ec7f;
+        font-size: 18px;
+        border-radius: 20px;
+        margin: 30px 0px;
+        color: rgb(44, 42, 42);
+    }
+    
+    #signup-submitBtn:hover,
+    #login-submitBtn:hover,
+    #submitExpenseBtn:hover {
+        cursor: pointer;
+        background: #9af1a0;
+        color: black;
+    }
+    /* ERRORS */
+    
+    #errors {
+        display: inline-flex;
+        flex-direction: row;
+    }
+    
+    #errors li {
+        padding: 0px 25px 15px;
+        list-style: none;
+        color: red;
+        text-align: center;
+        font-weight: bold;
+    }
+    /* VIEW PROFILE */
+    
+    #grid-container-profile {
+        display: grid;
+        grid-template-columns: auto;
+        grid-column-gap: 2.5em;
+        grid-row-gap: 1em;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    #grid-container-profile h2{
+        padding-top: 10px;
+        text-align: center;
+    }
+    
+    #renderCategoryTotal {
+        color: white;
+        text-align: center;
+        padding-top: 10px;
+    }
+    /* VIEW EXPENSES */
+    
+    #grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-column-gap: 2.5em;
+        grid-row-gap: 1em;
+    }
+    
+    #grid-container h3 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 90%;
+        text-align: center;
+    }
+    
+    #grid-container p {
+        color: white;
+        text-align: center;
+    }
+    
+    #no-expenses {
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        font-size: 90%;
+    }
+    
+    .center {
+        text-align: center;
+        align-self: center;
+    }
+    
+    .delete-btn {
+        cursor: pointer;
+    }
+    /* Animation */
+    
+    section {
+        width: 100%;
+        height: 100vh;
+        /* background: #649ff8; */
+        background: #78ec7f;
+        overflow: hidden;
+    }
+    
+    section .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(wave.png);
+        background-size: 1000px 100px;
+    }
+    
+    section .wave.wave1 {
+        animation: animate 30s linear infinite;
+        z-index: 1000;
+        opacity: 1;
+        animation-delay: 0s;
+        bottom: 0;
+    }
+    
+    section .wave.wave2 {
+        animation: animate2 15s linear infinite;
+        z-index: 999;
+        opacity: 0.5;
+        animation-delay: -5s;
+        bottom: 10px;
+    }
+    
+    section .wave.wave3 {
+        animation: animate 30s linear infinite;
+        z-index: 998;
+        opacity: 0.2;
+        animation-delay: 2s;
+        bottom: 15;
+    }
+    
+    section .wave.wave4 {
+        animation: animate2 5s linear infinite;
+        z-index: 997;
+        opacity: 0.7;
+        animation-delay: -5s;
+        bottom: 20px;
+    }
+    
+    @keyframes animate {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 1000px;
+        }
+    }
+    
+    @keyframes animate2 {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: -1000px;
+        }
+    }
+    
+    @media screen and (max-width: 1440px) {
+        #chart_div {
+            width: 500px;
+            height: 300px;
+        }
+    }
+    
+    @media screen and (max-width: 1024px) {
+        #chart_div {
+            width: 450px;
+            height: 250px;
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .form-container {
+            left: 30%;
+        }
+        .table {
+            width: 80%;
+        }
+        #chart_div {
+            right: 10%;
+            width: 400px;
+            height: 220px;
+        }
+    }
+    
+    @media screen and (max-width: 630px) {
+        #grid-container {
+            grid-column-gap: 1em;
+            grid-row-gap: 0.5em;
+        }
+        #grid-container h3 {
+            font-size: 70%;
+        }
+    }
+    
+    @media screen and (max-width: 435px) {
+        .form-container {
+            left: 15%;
+            width: 250px;
+        }
+        button {
+            width: 85px;
+            height: 25px;
+        }
+        .title {
+            font-size: 250%;
+            top: 5%;
+            left: 5%;
+        }
+        .user-nav {
+            margin-right: 1rem;
+        }
+        #chart_div {
+            width: 300px;
+            height: 230px;
+        }
+        #with-auth-nav {
+            margin-top: 10%;
+        }
+        #grid-container {
+            grid-column-gap: 0.5em;
+            grid-row-gap: 0.5em;
+        }
+        #grid-container h3 {
+            font-size: 65%;
+        }
+    }
+    
+    @media screen and (max-width: 375px) {
+        .form-container {
+            left: 14%;
+            width: 230px;
+        }
+        button {
+            width: 85px;
+            height: 25px;
+        }
+        .table {
+            width: 350px;
+        }
+        #with-auth-nav {
+            margin-top: 10%;
+        }
+        #chart_div {
+            width: 300px;
+            height: 230px;
+        }
+    }
+    
+    @media screen and (max-width: 345px) {
+        #with-auth-nav {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #with-auth-nav li {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+    }
+    
+    @media screen and (max-width: 320px) {
+        .form-container {
+            left: 10%;
+            width: 200px;
+            height: 310px;
+        }
+        button {
+            width: 75px;
+            height: 25px;
+        }
+        .title {
+            font-size: 220%;
+            top: 5%;
+            left: 25%;
+        }
+        .table {
+            width: 300px;
+        }
+        #chart_div {
+            width: 200px;
+            height: 180px;
+        }
+    }

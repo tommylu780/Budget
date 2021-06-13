@@ -1,0 +1,63 @@
+<h2 id="budget-logo">Budgét</h2>
+<section id="card-container">
+    <div class="table expenses">
+        <div class="profile-container">
+            <h1 class="form-title">YOUR EXPENSES</h1>
+            <ul id="profile-ul">
+                <li>
+                    <strong>Username: </strong>{{user.username}}
+                </li>
+                <li>
+                    <strong>Email: </strong>{{user.email}}
+                </li>
+            </ul>
+            {{!-- <div id="chart_div"></div> --}}
+        </div>
+        {{#if hasExpenses}}
+        <div id="grid-container">
+            <div class="grid-item">
+                <h3>Expense</h3>
+            </div>
+            <div class="grid-item">
+                <h3>Amount</h3>
+            </div>
+            <div class="grid-item">
+                <h3>Category</h3>
+            </div>
+            <div class="grid-item">
+                <h3>Date</h3>
+            </div>
+            <div class="grid-item">
+                <h3>Delete</h3>
+            </div>
+            {{#each expenses as |expense|}}
+            <div class="grid-item">
+                <p>{{expense.expense_name}}</p>
+            </div>
+            <div class="grid-item">
+                <p>${{expense.amount}}</p>
+            </div>
+            <div class="grid-item">
+                <p>{{expense.subCategory.subcategory_name}}</p>
+            </div>
+            <div class="grid-item">
+                <p>{{format_date expense.createdAt}}</p>
+            </div>
+            <div class="grid-item center">
+                <p class="delete-btn" id="{{expense.id}}">&#10005;</p>
+            </div>
+            {{/each}}
+        </div>
+
+        {{else}}
+        <h3 id="no-expenses">
+            You have no expenses
+        </h3>
+        {{/if}}
+    </div>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+</section>
+<script src="/delete.js"></script>
